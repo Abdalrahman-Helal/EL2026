@@ -3,6 +3,13 @@
 
 def compute(number):
     """write your soulution Here Sum 1 … n — Compute and display the running total."""
+    total = 0
+    if number <= 0:
+        return 0
+    for current in range(1, number + 1):
+        total += current
+    print("Running total after adding", current, "is:", total)
+    return total
 
 
 if __name__ == "__main__":

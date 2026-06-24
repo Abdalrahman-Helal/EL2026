@@ -7,6 +7,11 @@ def area(number1):
     and compute the area. Don't forget to return the result at the end.
     """
 
+    pi = 3.141592653589793
+    area_value = pi * (number1 ** 2)
+    print("The area of the circle with radius", number1, "is:", area_value)
+    return area_value
+
 
 if __name__ == "__main__":
     assert area(2) == 12.566370614359172, "Test case failed"

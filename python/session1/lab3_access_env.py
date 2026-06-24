@@ -6,6 +6,18 @@ import os
 def access_env(env_var):
     """Write your solution here. Don't forget to return the result at the end."""
 
+    path_variable = os.environ.get("PATH", "")
+    print("The PATH environment variable is:")
+    print(path_variable)
+
+    if path_variable:
+        for index, path in enumerate(path_variable.split(os.pathsep), start=1):
+            print(f"{index}: {path}")
+    else:
+        print("PATH is not set.")
+    return os.environ.get(env_var, "Environment variable not found.")
+
+
 
 if __name__ == "__main__":
     os.environ["TEST1234"] = "test_value"
