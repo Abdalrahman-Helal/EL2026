@@ -108,10 +108,6 @@ for s in "${sessions[@]}"; do
 done
 
 for session in "${sessions[@]}"; do
-    # Skip session3 - not finished yet
-    if [[ "$(basename "$session")" == "session3" ]]; then
-        continue
-    fi
     examine_session "$session"
 done
 
