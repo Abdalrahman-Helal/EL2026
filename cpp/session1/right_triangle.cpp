@@ -1,12 +1,35 @@
 #include <algorithm>
 #include <cassert>
 #include <iostream>
+#include <cmath>
 
 bool isRightTriangle(int a, int b, int c) {
   // write your solution here...
   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
+  if( (std::pow(c , 2) == std::pow(a , 2) + std::pow(b , 2)) ||
+   (std::pow(a , 2) == std::pow(b , 2) + std::pow(c ,2)) ||
+   (std::pow(b , 2) == std::pow(a , 2) + std::pow(c , 2))) {
+    return true;
+  }
+  else {
+    return false;
+  }
   return 0;
 }
+
+// bool isRightTriangle(int a, int b, int c) {
+//   // write your solution here...
+//   // Hint: Use Pythagorean theorem: a² + b² = c² (where c is the largest side)
+//   if( (c*c == a*a + b*b) ||
+//    (a*a == b*b + c*c) ||
+//    (b*b == a*a + c*c)) {
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+//   return 0;
+// }
 
 int main() {
   std::cout << "==============================================\n";

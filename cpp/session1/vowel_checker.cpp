@@ -5,6 +5,13 @@ bool isVowel(char letter) {
   // write your solution here...
   // Hint: Check if the letter is 'a', 'e', 'i', 'o', 'u' (both uppercase and
   // lowercase)
+  char vowel [] = {'a', 'e', 'i', 'o', 'u'};
+  char lowerLetter = tolower(letter);
+  for (char v : vowel){
+    if( v == lowerLetter){
+      return true;
+    }
+  }
   return false;
 }
 

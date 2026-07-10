@@ -5,7 +5,8 @@
 
 int getASCIIValue(char character) {
   // write your solution here...
-  return 0;
+  int ascii = int(character);
+  return ascii;
 }
 
 int main() {
