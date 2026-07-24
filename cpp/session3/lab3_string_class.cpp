@@ -12,30 +12,57 @@ private:
 public:
   // Default constructor
   // write your solution here...
-  MyString() {}
+  MyString() 
+  {
+    string_data = new char[1];
+    string_data[0] = '\0';
+    length = 0;
+  }
 
-  MyString(const char *str) {}
+  MyString(const char *str) 
+  {
+    if (str == nullptr) 
+    {
+      string_data = new char[1];
+      string_data[0] = '\0';
+      length = 0;
+    } 
+    else 
+    {
+      length = std::strlen(str);
+      string_data = new char[length + 1];
+      std::strcpy(string_data, str);
+    }
+  }
 
   // Destructor
-  ~MyString() = default;
+  ~MyString() {
+    delete[] string_data;
+  }
 
   // Getters
-  size_t getLength() const { return 0; }
-  const char *getString() const { return ""; }
+  size_t getLength() const { return length; }
+  const char *getString() const { return string_data; }
 
   // Indexing operator (const version)
   // uncomment and write your solution
-  //   const char &operator[](size_t index) const { }
+  const char &operator[](size_t index) const { return string_data[index]; } 
 
   // Indexing operator (non-const version)
   // uncomment and write your solution
-  //   char &operator[](size_t index) {  }
+  char &operator[](size_t index) { return string_data[index]; }
 
   // Equality operator
-  bool operator==(const MyString &other) const { return false; }
+  bool operator==(const MyString &other) const 
+  { 
+    return std::strcmp(string_data, other.string_data) == 0; 
+  }
 
   // Inequality operator
-  bool operator!=(const MyString &other) const { return false; }
+  bool operator!=(const MyString &other) const 
+  {
+    return !(*this == other); 
+  }
 };
 
 int main() {

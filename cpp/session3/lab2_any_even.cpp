@@ -5,6 +5,14 @@
 bool anyEven(int arr[], int size) {
   // Professional C++ solution using std::any_of with lambda
   // using std::any_of
+  if (size == 0) 
+  {
+    return false;
+  }
+  else 
+  {
+    return std::any_of(arr, arr + size, [](int num) { return num % 2 == 0; });
+  }
   return false;
 }
 
